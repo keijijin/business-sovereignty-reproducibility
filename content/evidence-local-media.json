@@ -1,0 +1,71 @@
+{
+  "passed": 8,
+  "failed": 0,
+  "scope": "local HTTP video delivery",
+  "results": [
+    {
+      "unit": "01",
+      "status": "passed",
+      "checks": [
+        "actual MP4 content length",
+        "byte range seeking"
+      ]
+    },
+    {
+      "unit": "02",
+      "status": "passed",
+      "checks": [
+        "actual MP4 content length",
+        "byte range seeking"
+      ]
+    },
+    {
+      "unit": "03",
+      "status": "passed",
+      "checks": [
+        "actual MP4 content length",
+        "byte range seeking"
+      ]
+    },
+    {
+      "unit": "04",
+      "status": "passed",
+      "checks": [
+        "actual MP4 content length",
+        "byte range seeking"
+      ]
+    },
+    {
+      "unit": "05",
+      "status": "passed",
+      "checks": [
+        "actual MP4 content length",
+        "byte range seeking"
+      ]
+    },
+    {
+      "unit": "06",
+      "status": "passed",
+      "checks": [
+        "actual MP4 content length",
+        "byte range seeking"
+      ]
+    },
+    {
+      "unit": "07",
+      "status": "passed",
+      "checks": [
+        "actual MP4 content length",
+        "byte range seeking"
+      ]
+    },
+    {
+      "unit": "08",
+      "status": "passed",
+      "checks": [
+        "actual MP4 content length",
+        "byte range seeking"
+      ]
+    }
+  ]
+}

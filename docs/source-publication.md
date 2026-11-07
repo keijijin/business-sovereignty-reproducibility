@@ -1,0 +1,7 @@
+# GitHubとSitesの保存範囲
+
+GitHubのmainが動画8本とDBスナップショットを含む完全版である。SitesのGitには1push64MiB・1オブジェクト32MiBの制限があり、動画07（約41MB）は保存できない。過去commitに動画を含むGitHubの履歴をそのままSitesへpushすることもできない。
+
+公開ソースはSites履歴から分岐した作業用checkoutへ、GitHub正本の追跡ファイルをmedia以外すべてコピーして作る。buildと評価コードは同じで、content/evidence.jsonのsourceHashesを照合する。サイトの動画本体は既存R2を使い、配信物へ再同梱しない。GitHubの履歴を書き換えず、Sitesへ強制pushしない。
+
+2026-11-07の容量制限回避中にSites履歴へ動画01〜06を小分け登録した。最終のサイト用ソースのtreeからmediaを除去したが、既存オブジェクトを消すための履歴書換はしない。この保存構成はGitHubからの完全復元とR2による配信を変更しない。

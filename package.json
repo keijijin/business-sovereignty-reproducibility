@@ -1,0 +1,14 @@
+{
+  "name": "business-sovereignty-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate-artifact.mjs",
+    "dev": "node scripts/dev.mjs",
+    "test:boundaries": "node scripts/check-boundaries.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

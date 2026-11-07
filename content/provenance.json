@@ -1,0 +1,16 @@
+{
+  "spec": "BS-CR v2",
+  "files": {
+    "materials/business.json": "c50adaa36b84a3df2ac5c29184d986a6963ead0c51cb8f71ac7b17e06b3cfc66",
+    "materials/acceptance.py": "3b2221405fd641ab88864962c4889e4ca601e6c5aba6c4344459e6e594019846",
+    "materials/python_server.py": "a1372f128eae3e23d90f11378ba65ca95283e4d33884dcbb342029d70c4272f5",
+    "worker/domain.mjs": "7220f07dcc42b28413b266781adae3fc5ea21526804f239d23116fb303eccae3",
+    "content/lessons.json": "47a8328e45db5c631f4f4511bed3f2376e8036004b6fc5c78af9a620e767273a"
+  },
+  "generation": "AI-authored in this chat from explicit specification",
+  "evaluation": "Separate public-HTTP acceptance, not blind holdout",
+  "hosted": "JavaScript Worker + D1",
+  "alternate": "Python + local SQLite",
+  "contractVersion": "2026-11-07.1",
+  "configuration": "Both implementations consume business.json; behavioral checks in evidence.specConfiguration. Hashes identify inputs, not semantic agreement."
+}

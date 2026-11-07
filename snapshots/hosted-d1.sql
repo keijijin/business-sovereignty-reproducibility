@@ -1,0 +1,4 @@
+BEGIN TRANSACTION;
+CREATE TABLE workspaces(id TEXT PRIMARY KEY NOT NULL,revision INTEGER NOT NULL,body TEXT NOT NULL);
+INSERT INTO "workspaces" VALUES('sample-workspace-01',3,'{"revision":3,"policyVersion":2,"requests":[{"id":"cr-9adec56d-b677-4083-bb2b-05dec5288057","title":"公開PoC：承認責任の分離","part":"BRK-001 ブラケット 改訂A","reason":"本人限定サイトのD1で業務と監査の保持を検証する合成データ","tenant":"atelier","createdBy":"kai","createdAt":"2026-11-06T15:03:36.211Z","status":"approved","history":[{"action":"create","actor":"kai","at":"2026-11-06T15:03:36.211Z","from":null,"to":"draft","policyVersion":2},{"action":"submit","actor":"kai","at":"2026-11-06T15:04:16.183Z","from":"draft","to":"submitted","policyVersion":2},{"action":"approve","actor":"ren","at":"2026-11-06T15:05:17.882Z","from":"submitted","to":"approved","policyVersion":2}]}],"progress":{}}');
+COMMIT;

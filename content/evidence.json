@@ -1,0 +1,757 @@
+{
+  "status": "local-verified",
+  "runs": [
+    {
+      "base": "http://127.0.0.1:53404",
+      "executedAt": "2026-11-07T02:17:56Z",
+      "kind": "local HTTP acceptance; not blind holdout",
+      "passed": 44,
+      "failed": 0,
+      "results": [
+        {
+          "name": "交換契約: 非ISO日時の拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 年0000の拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 存在しない暦日の拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 起票役割のない履歴を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 真偽値の仕様版を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 不正サロゲートを拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 絵文字120文字を受理",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 絵文字121文字を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 非整数revision True",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 非整数revision 1.5",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 非整数revision '1'",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 非整数revision None",
+          "status": "passed"
+        },
+        {
+          "name": "R06 別テナントのexportを拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R06 別テナントの仕様切替を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "学習保存は業務revisionを変更しない",
+          "status": "passed"
+        },
+        {
+          "name": "R02 下書きを訂正",
+          "status": "passed"
+        },
+        {
+          "name": "R02 訂正前後を履歴に保存",
+          "status": "passed"
+        },
+        {
+          "name": "R02 下書きを取り下げ",
+          "status": "passed"
+        },
+        {
+          "name": "R02 取下げ後の訂正を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R02 拒否した訂正は本文と履歴を変えない",
+          "status": "passed"
+        },
+        {
+          "name": "R10 未知の実験人物を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R01 空白タイトルを拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R01 未定義部品を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R01 正常起票と初期状態",
+          "status": "passed"
+        },
+        {
+          "name": "R03 設計者による承認を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R02 他人による提出を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R02 起票者が提出",
+          "status": "passed"
+        },
+        {
+          "name": "R04 v2で自己承認を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R05 拒否時にデータと履歴を維持",
+          "status": "passed"
+        },
+        {
+          "name": "R06 他テナントからIDを指定しても不可",
+          "status": "passed"
+        },
+        {
+          "name": "R06 他テナント一覧に混入しない",
+          "status": "passed"
+        },
+        {
+          "name": "R03 別承認者が承認",
+          "status": "passed"
+        },
+        {
+          "name": "R02 承認済みの再提出を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R07 3操作の監査と仕様版",
+          "status": "passed"
+        },
+        {
+          "name": "R08 古いrevisionの更新を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R04 v1へ切替",
+          "status": "passed"
+        },
+        {
+          "name": "R04 v1で自己承認が可能",
+          "status": "passed"
+        },
+        {
+          "name": "R04 仕様変更で過去履歴を改変しない",
+          "status": "passed"
+        },
+        {
+          "name": "R05 理由なし却下を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R05 理由付き却下",
+          "status": "passed"
+        },
+        {
+          "name": "R09 非空移行先へのimportを拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R04 真偽値の仕様切替を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R07 仕様切替の操作者と時刻を保持",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 数値として整数のrevision 1.0表現を受理",
+          "status": "passed"
+        }
+      ],
+      "label": "JavaScript / Node SQLite"
+    },
+    {
+      "base": "http://127.0.0.1:53512",
+      "executedAt": "2026-11-07T02:17:56Z",
+      "kind": "local HTTP acceptance; not blind holdout",
+      "passed": 44,
+      "failed": 0,
+      "results": [
+        {
+          "name": "交換契約: 非ISO日時の拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 年0000の拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 存在しない暦日の拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 起票役割のない履歴を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 真偽値の仕様版を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 不正サロゲートを拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 絵文字120文字を受理",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 絵文字121文字を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 非整数revision True",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 非整数revision 1.5",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 非整数revision '1'",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 非整数revision None",
+          "status": "passed"
+        },
+        {
+          "name": "R06 別テナントのexportを拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R06 別テナントの仕様切替を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "学習保存は業務revisionを変更しない",
+          "status": "passed"
+        },
+        {
+          "name": "R02 下書きを訂正",
+          "status": "passed"
+        },
+        {
+          "name": "R02 訂正前後を履歴に保存",
+          "status": "passed"
+        },
+        {
+          "name": "R02 下書きを取り下げ",
+          "status": "passed"
+        },
+        {
+          "name": "R02 取下げ後の訂正を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R02 拒否した訂正は本文と履歴を変えない",
+          "status": "passed"
+        },
+        {
+          "name": "R10 未知の実験人物を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R01 空白タイトルを拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R01 未定義部品を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R01 正常起票と初期状態",
+          "status": "passed"
+        },
+        {
+          "name": "R03 設計者による承認を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R02 他人による提出を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R02 起票者が提出",
+          "status": "passed"
+        },
+        {
+          "name": "R04 v2で自己承認を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R05 拒否時にデータと履歴を維持",
+          "status": "passed"
+        },
+        {
+          "name": "R06 他テナントからIDを指定しても不可",
+          "status": "passed"
+        },
+        {
+          "name": "R06 他テナント一覧に混入しない",
+          "status": "passed"
+        },
+        {
+          "name": "R03 別承認者が承認",
+          "status": "passed"
+        },
+        {
+          "name": "R02 承認済みの再提出を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R07 3操作の監査と仕様版",
+          "status": "passed"
+        },
+        {
+          "name": "R08 古いrevisionの更新を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R04 v1へ切替",
+          "status": "passed"
+        },
+        {
+          "name": "R04 v1で自己承認が可能",
+          "status": "passed"
+        },
+        {
+          "name": "R04 仕様変更で過去履歴を改変しない",
+          "status": "passed"
+        },
+        {
+          "name": "R05 理由なし却下を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R05 理由付き却下",
+          "status": "passed"
+        },
+        {
+          "name": "R09 非空移行先へのimportを拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R04 真偽値の仕様切替を拒否",
+          "status": "passed"
+        },
+        {
+          "name": "R07 仕様切替の操作者と時刻を保持",
+          "status": "passed"
+        },
+        {
+          "name": "交換契約: 数値として整数のrevision 1.0表現を受理",
+          "status": "passed"
+        }
+      ],
+      "label": "Python / SQLite"
+    }
+  ],
+  "migration": {
+    "kind": "bidirectional HTTP export/import; fresh destinations",
+    "passed": 6,
+    "failed": 0,
+    "results": [
+      {
+        "name": "js → py import",
+        "status": "passed"
+      },
+      {
+        "name": "js → py 全申請・属性・履歴一致",
+        "status": "passed"
+      },
+      {
+        "name": "js → py 仕様監査一致",
+        "status": "passed"
+      },
+      {
+        "name": "py → js import",
+        "status": "passed"
+      },
+      {
+        "name": "py → js 全申請・属性・履歴一致",
+        "status": "passed"
+      },
+      {
+        "name": "py → js 仕様監査一致",
+        "status": "passed"
+      }
+    ]
+  },
+  "limitations": [
+    "盲検ではない",
+    "モデル提供元の交換は未実施",
+    "本番性能・職務権限は未認定"
+  ],
+  "boundaryChecks": {
+    "passed": 4,
+    "kind": "in-memory repository boundary checks",
+    "checks": [
+      "unauthenticated returns 401",
+      "owner workspace isolation",
+      "foreign origin rejected",
+      "concurrent revision accepts once"
+    ]
+  },
+  "hostedVerification": {
+    "status": "passed",
+    "site": "https://business-sovereignty-lab-kjin.choicemanta.chatgpt.site",
+    "sourceCommit": "e48b9aeafd6b1007deccff9ab70d6711087cad1a",
+    "checks": [
+      "本人のSites認証で開ける",
+      "D1へ起票して提出",
+      "v2の自己承認がR04で拒否",
+      "別承認者で承認し監査3件を保持"
+    ],
+    "kind": "logged-in browser interaction; synthetic records"
+  },
+  "mediaChecks": {
+    "passed": 7,
+    "kind": "media route boundary and byte range checks"
+  },
+  "embeddedVideos": {
+    "count": 8,
+    "status": "uploaded",
+    "localDelivery": {
+      "passed": 8,
+      "failed": 0,
+      "scope": "local HTTP video delivery",
+      "results": [
+        {
+          "unit": "01",
+          "status": "passed",
+          "checks": [
+            "actual MP4 content length",
+            "byte range seeking"
+          ]
+        },
+        {
+          "unit": "02",
+          "status": "passed",
+          "checks": [
+            "actual MP4 content length",
+            "byte range seeking"
+          ]
+        },
+        {
+          "unit": "03",
+          "status": "passed",
+          "checks": [
+            "actual MP4 content length",
+            "byte range seeking"
+          ]
+        },
+        {
+          "unit": "04",
+          "status": "passed",
+          "checks": [
+            "actual MP4 content length",
+            "byte range seeking"
+          ]
+        },
+        {
+          "unit": "05",
+          "status": "passed",
+          "checks": [
+            "actual MP4 content length",
+            "byte range seeking"
+          ]
+        },
+        {
+          "unit": "06",
+          "status": "passed",
+          "checks": [
+            "actual MP4 content length",
+            "byte range seeking"
+          ]
+        },
+        {
+          "unit": "07",
+          "status": "passed",
+          "checks": [
+            "actual MP4 content length",
+            "byte range seeking"
+          ]
+        },
+        {
+          "unit": "08",
+          "status": "passed",
+          "checks": [
+            "actual MP4 content length",
+            "byte range seeking"
+          ]
+        }
+      ]
+    },
+    "hosting": "Authenticated R2 streaming; all eight uploads confirmed in application UI"
+  },
+  "regressions": {
+    "kind": "200 records, Unicode maximum fields, above former 1MiB IPC cap",
+    "passed": 6,
+    "failed": 0,
+    "results": [
+      {
+        "name": "js 200件・1MiB超の保存と読出し",
+        "status": "passed"
+      },
+      {
+        "name": "js 201件目を拒否して状態保持",
+        "status": "passed"
+      },
+      {
+        "name": "js 大容量パックを別実装へ移行",
+        "status": "passed"
+      },
+      {
+        "name": "py 200件・1MiB超の保存と読出し",
+        "status": "passed"
+      },
+      {
+        "name": "py 201件目を拒否して状態保持",
+        "status": "passed"
+      },
+      {
+        "name": "py 大容量パックを別実装へ移行",
+        "status": "passed"
+      }
+    ]
+  },
+  "specConfiguration": {
+    "kind": "startup JSON configuration behavior; changed limit and added part",
+    "passed": 4,
+    "failed": 0,
+    "results": [
+      {
+        "name": "js 仕様JSONの文字数・部品変更が実行時に反映",
+        "status": "passed"
+      },
+      {
+        "name": "py 仕様JSONの文字数・部品変更が実行時に反映",
+        "status": "passed"
+      },
+      {
+        "name": "js 未対応仕様で起動を拒否",
+        "status": "passed"
+      },
+      {
+        "name": "py 未対応仕様で起動を拒否",
+        "status": "passed"
+      }
+    ]
+  },
+  "executedAt": "2026-11-07T02:18:09Z",
+  "sourceCommit": "130054398f6c72c071fdeea266fcac714250fd1f",
+  "sourceHashes": {
+    "materials/business.json": "c50adaa36b84a3df2ac5c29184d986a6963ead0c51cb8f71ac7b17e06b3cfc66",
+    "materials/python_server.py": "a1372f128eae3e23d90f11378ba65ca95283e4d33884dcbb342029d70c4272f5",
+    "materials/acceptance.py": "3b2221405fd641ab88864962c4889e4ca601e6c5aba6c4344459e6e594019846",
+    "worker/domain.mjs": "7220f07dcc42b28413b266781adae3fc5ea21526804f239d23116fb303eccae3",
+    "scripts/dev.mjs": "cf3e4bb9a267bd407b3fda09bcaddc6346fa44de7b737926111f6f817a8f08bd",
+    "scripts/local-sqlite.mjs": "c232bc3fd5a76ddb2e62f6c74c1c51d30f1292741dce8ca33648f9b4da6ebf1d",
+    "scripts/review-checks.py": "8fb6ae53129ee553ba7471b667b0cdae1314826ab76003b3ca098ebe477dfc63",
+    "web/app.js": "c60dd11ffd1f60cfca7f1a4db75212a2e379c6be7abfebe4290cafee08fe21ed"
+  },
+  "boundaries": {
+    "kind": "local module boundary checks",
+    "passed": 4,
+    "failed": 0,
+    "results": [
+      {
+        "name": "unauthenticated",
+        "status": "passed"
+      },
+      {
+        "name": "workspace isolation",
+        "status": "passed"
+      },
+      {
+        "name": "foreign origin",
+        "status": "passed"
+      },
+      {
+        "name": "concurrent revision",
+        "status": "passed"
+      }
+    ]
+  },
+  "media": {
+    "kind": "local module boundary checks",
+    "passed": 7,
+    "failed": 0,
+    "results": [
+      {
+        "name": "authentication",
+        "status": "passed"
+      },
+      {
+        "name": "MIME",
+        "status": "passed"
+      },
+      {
+        "name": "upload",
+        "status": "passed"
+      },
+      {
+        "name": "owner isolation",
+        "status": "passed"
+      },
+      {
+        "name": "seek range",
+        "status": "passed"
+      },
+      {
+        "name": "invalid range",
+        "status": "passed"
+      },
+      {
+        "name": "HEAD",
+        "status": "passed"
+      }
+    ]
+  },
+  "storage": {
+    "kind": "real SQLite repository SQL, chunk transaction and restart",
+    "passed": 5,
+    "failed": 0,
+    "results": [
+      {
+        "name": "CAS concurrent writer succeeds once",
+        "status": "passed"
+      },
+      {
+        "name": "chunked >1MiB roundtrip",
+        "status": "passed"
+      },
+      {
+        "name": "CAS loser preserves all chunks",
+        "status": "passed"
+      },
+      {
+        "name": "restart persistence",
+        "status": "passed"
+      },
+      {
+        "name": "owner isolation",
+        "status": "passed"
+      }
+    ]
+  },
+  "snapshots": {
+    "kind": "snapshot size/hash/integrity verification",
+    "passed": 18,
+    "failed": 0,
+    "results": [
+      {
+        "name": "media/unit-01.mp4 size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "media/unit-02.mp4 size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "media/unit-03.mp4 size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "media/unit-04.mp4 size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "media/unit-05.mp4 size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "media/unit-06.mp4 size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "media/unit-07.mp4 size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "media/unit-08.mp4 size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "snapshots/hosted-d1.rows.json size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "snapshots/hosted-d1.sql size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "snapshots/hosted-d1.sqlite size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "snapshots/local-javascript.sql size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "snapshots/local-javascript.sqlite size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "snapshots/local-migration-python.sql size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "snapshots/local-migration-python.sqlite size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "snapshots/local-python.sql size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "snapshots/local-python.sqlite size/SHA-256",
+        "status": "passed"
+      },
+      {
+        "name": "SQLite integrity and anonymized workspace IDs",
+        "status": "passed"
+      }
+    ]
+  },
+  "localUploads": {
+    "kind": "HTTP PUT media; separate ignored local directory",
+    "passed": 1,
+    "failed": 0,
+    "results": [
+      {
+        "name": "ローカル動画取込はGit動画を保持し専用領域へ保存",
+        "status": "passed"
+      }
+    ]
+  },
+  "sourceCommitRole": "tested source commit; exact test inputs are identified by sourceHashes"
+}

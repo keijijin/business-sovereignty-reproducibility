@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using this replication artifact."
+title: "Business Sovereignty through Replaceable Implementations"
+authors:
+  - family-names: Jin
+    given-names: Keiji
+version: 1.0.0
+date-released: 2026-11-07
+url: "https://github.com/keijijin/business-sovereignty-reproducibility"
+repository-code: "https://github.com/keijijin/business-sovereignty-reproducibility"
+type: software

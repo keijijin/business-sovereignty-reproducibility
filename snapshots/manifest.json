@@ -1,0 +1,116 @@
+{
+  "createdAt": "2026-11-07T00:19:50.020272+00:00",
+  "databases": [
+    {
+      "file": "local-javascript.sqlite",
+      "source": ".local/acceptance-js.sqlite",
+      "kind": "SQLite online backup"
+    },
+    {
+      "file": "local-python.sqlite",
+      "source": ".local/acceptance-python.sqlite",
+      "kind": "SQLite online backup"
+    },
+    {
+      "file": "local-migration-python.sqlite",
+      "source": ".local/migration-python.sqlite",
+      "kind": "SQLite online backup"
+    },
+    {
+      "file": "hosted-d1.sqlite",
+      "source": "Sites DB/workspaces",
+      "kind": "D1 user-table logical snapshot",
+      "rows": 1,
+      "capturedAt": "2026-11-07 00:19:48 UTC"
+    }
+  ],
+  "files": [
+    {
+      "file": "media/unit-01.mp4",
+      "bytes": 31452476,
+      "sha256": "60eadb0ded6b63d884d7541e0a63fe390a83a382f21ea53df5de3da71daa10d8"
+    },
+    {
+      "file": "media/unit-02.mp4",
+      "bytes": 27327505,
+      "sha256": "631de4aef423e83574e38dedd51b631bb30306203ced2bed0777270709b4d40e"
+    },
+    {
+      "file": "media/unit-03.mp4",
+      "bytes": 33373237,
+      "sha256": "03212c682f95d2194ac04ff9c7c8b451c46e509d7ccb957333a50592591f9013"
+    },
+    {
+      "file": "media/unit-04.mp4",
+      "bytes": 26403862,
+      "sha256": "5f1af91c36bac0916c1489f482d75b07c9dc357ffe9b9ecbdfb56be789cce1e3"
+    },
+    {
+      "file": "media/unit-05.mp4",
+      "bytes": 31146191,
+      "sha256": "5621d053d980ceea4d4c6b14db108fbdcccf46d175020236dea11677fb19c7b0"
+    },
+    {
+      "file": "media/unit-06.mp4",
+      "bytes": 33056068,
+      "sha256": "eb71c3ab6e17c6fa6f06e20ea249a751c620f51c7857e2e6eb5a0b846dea0b98"
+    },
+    {
+      "file": "media/unit-07.mp4",
+      "bytes": 41129925,
+      "sha256": "9822fe4eac33956d308098e2ed323e4399c6c07364a6277057266b29409ddc91"
+    },
+    {
+      "file": "media/unit-08.mp4",
+      "bytes": 29280665,
+      "sha256": "1abe76b0103715cf00e4f03105015763fa4abaa8987c92c493e56038c9e550f6"
+    },
+    {
+      "file": "snapshots/hosted-d1.rows.json",
+      "bytes": 1276,
+      "sha256": "5789d4ed0f1d253478e046efce909d62df88b581bccd47587403eb630bec108f"
+    },
+    {
+      "file": "snapshots/hosted-d1.sql",
+      "bytes": 929,
+      "sha256": "183d15a29744a9018a135ce89124118df037e1d00f6d0b542e5e0262f1e057b4"
+    },
+    {
+      "file": "snapshots/hosted-d1.sqlite",
+      "bytes": 12288,
+      "sha256": "8c57d6c18200e354669d123bc917aaf89d559ed037a0cd1fce3635fb4e290f7e"
+    },
+    {
+      "file": "snapshots/local-javascript.sql",
+      "bytes": 3646,
+      "sha256": "3889861a3384bfc5e3f386e9bed50b2531f530388987e21608cdebf7dab1ec89"
+    },
+    {
+      "file": "snapshots/local-javascript.sqlite",
+      "bytes": 12288,
+      "sha256": "3e9761c3e10712ba316fef9f0add11f754b08d656d6dc42bf58e43ebec98d46a"
+    },
+    {
+      "file": "snapshots/local-migration-python.sql",
+      "bytes": 2979,
+      "sha256": "13ec9b7a91d79007a28cadba7dba550e0b6b1c148743655bb4b2b3d020b695dc"
+    },
+    {
+      "file": "snapshots/local-migration-python.sqlite",
+      "bytes": 8192,
+      "sha256": "bded3b8e938b8cc828ab4c6e4b462000db6612a9f240c515b241cff098ff66d6"
+    },
+    {
+      "file": "snapshots/local-python.sql",
+      "bytes": 2287,
+      "sha256": "af025f16e67d639d8428cbc6fa10302f81168650de081d8d486c5e68d0f8e6a1"
+    },
+    {
+      "file": "snapshots/local-python.sqlite",
+      "bytes": 8192,
+      "sha256": "1366fd43ec0d2675cc264065b73fbf2d55deea633ae6e1841e694c5b2c7316df"
+    }
+  ],
+  "anonymization": "Current snapshot workspace IDs are sample IDs; earlier private Git history is not rewritten.",
+  "publicExport": "Fresh Git history; current snapshot IDs substituted; hosting project identifier omitted."
+}

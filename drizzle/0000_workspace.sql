@@ -1,0 +1,5 @@
+CREATE TABLE workspaces (
+  id TEXT PRIMARY KEY NOT NULL,
+  revision INTEGER NOT NULL,
+  body TEXT NOT NULL
+);

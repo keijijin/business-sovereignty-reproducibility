@@ -1,0 +1,9 @@
+dist/
+site.tar.gz
+
+.local/
+outputs/
+__pycache__/
+
+media/*
+!media/unit-*.mp4

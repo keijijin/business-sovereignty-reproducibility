@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {handleMedia} from '../worker/media.mjs';
+const objects=new Map();const bucket={head:async k=>objects.has(k)?{size:objects.get(k).byteLength}:null,put:async(k,b)=>objects.set(k,b),get:async(k,o)=>{let b=new Uint8Array(objects.get(k));if(o?.range)b=b.slice(o.range.offset,o.range.offset+o.range.length);return {body:b}}};
+const request=(path,options={})=>new Request('https://test.example'+path,options);
+assert.equal((await handleMedia(request('/api/media'),bucket,null)).status,401);
+assert.equal((await handleMedia(request('/api/media/01',{method:'PUT',headers:{'Content-Type':'text/plain'},body:'hello'}),bucket,'A')).status,415);
+const mp4=new Uint8Array(32);mp4.set([0,0,0,32,102,116,121,112,105,115,111,109]);
+assert.equal((await handleMedia(request('/api/media/01',{method:'PUT',headers:{'Content-Type':'video/mp4'},body:mp4}),bucket,'A')).status,200);
+assert.equal((await(await handleMedia(request('/api/media'),bucket,'B')).json()).units[0].available,false);
+const range=await handleMedia(request('/media/01.mp4',{headers:{Range:'bytes=4-7'}}),bucket,'A');assert.equal(range.status,206);assert.equal(range.headers.get('Content-Range'),'bytes 4-7/32');assert.equal(await range.text(),'ftyp');
+assert.equal((await handleMedia(request('/media/01.mp4',{headers:{Range:'bytes=99-100'}}),bucket,'A')).status,416);
+const head=await handleMedia(request('/media/01.mp4',{method:'HEAD'}),bucket,'A');assert.equal(head.headers.get('Content-Length'),'32');assert.equal(await head.text(),'');
+console.log('7 media checks passed: authentication, MIME, upload, owner isolation, seek range, invalid range, HEAD');

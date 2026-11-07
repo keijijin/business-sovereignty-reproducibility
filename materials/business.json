@@ -1,0 +1,167 @@
+{
+  "id": "BS-CR",
+  "version": 2,
+  "purpose": "設計変更を申請し、別の承認者が判断し、その理由と履歴を引き継ぐ",
+  "states": [
+    "draft",
+    "submitted",
+    "approved",
+    "rejected",
+    "withdrawn"
+  ],
+  "rules": [
+    {
+      "id": "R01",
+      "text": "タイトル120・理由2000コードポイント以内。空白のみを拒否し、仕様のtrimCodePointsで端を除去して保存する。部品は名簿から選択しdraftで開始する。"
+    },
+    {
+      "id": "R02",
+      "text": "起票者かつ設計者だけがdraftを訂正・提出・取下げできる。draft以外は409。不正な役割は403。取下げ後はwithdrawnとして履歴と件数を保持する。"
+    },
+    {
+      "id": "R03",
+      "text": "承認者の役割だけがsubmittedを承認・却下できる。不正な役割は403"
+    },
+    {
+      "id": "R04",
+      "text": "仕様v1は自己承認を許す。v2は起票者による承認・却下を403で拒否する。変更後の操作に適用し過去の履歴は改変しない"
+    },
+    {
+      "id": "R05",
+      "text": "却下理由は空白以外を必須とする。拒否した要求で業務データ・履歴・改訂を変更しない"
+    },
+    {
+      "id": "R06",
+      "text": "申請一覧・個別操作は人物のテナント内に限る。他テナントIDは404。例外としてatelierの承認者だけが本人workspace全体（二テナント）のexport/importと仕様切替を行える。他テナントの人物は403。"
+    },
+    {
+      "id": "R07",
+      "text": "起票・訂正・提出・承認・却下・取下げは操作者・UTC ISO日時・仕様版・変更前後を監査に追加する。仕様切替はpolicyHistoryへ操作者・時刻・前後版を追記する。履歴の書換APIは持たない。"
+    },
+    {
+      "id": "R08",
+      "text": "業務revisionは非負のsafe integerで厳密比較し、同時更新は一回だけ成立する。真偽値・文字列・小数は409。学習progressRevisionは独立し、学習保存は業務revisionを変更しない。"
+    },
+    {
+      "id": "R09",
+      "text": "export/importでID・参照・状態・履歴・仕様切替監査を保持する。空の移行先のみ。不正パックは全体を400で拒否する。起票・提出・訂正・取下げ履歴にも役割を検査する。日時はUTC ISO 8601のミリ秒精度に限定する。"
+    },
+    {
+      "id": "R10",
+      "text": "本人の学習・実験ワークスペースをSites認証IDで分離する。PoCの役割選択は合成人物のシミュレーションであり職場の本人認証ではない"
+    }
+  ],
+  "actors": {
+    "aya": {
+      "name": "綾・設計者",
+      "tenant": "atelier",
+      "roles": [
+        "designer"
+      ]
+    },
+    "ren": {
+      "name": "蓮・承認者",
+      "tenant": "atelier",
+      "roles": [
+        "approver"
+      ]
+    },
+    "kai": {
+      "name": "海・設計兼承認者",
+      "tenant": "atelier",
+      "roles": [
+        "designer",
+        "approver"
+      ]
+    },
+    "mio": {
+      "name": "澪・別テナント",
+      "tenant": "other",
+      "roles": [
+        "designer",
+        "approver"
+      ]
+    }
+  },
+  "parts": [
+    "BRK-001 ブラケット 改訂A",
+    "SNS-002 温度センサー 改訂B",
+    "MTR-003 モーター 改訂C"
+  ],
+  "defaults": {
+    "policyVersion": 2
+  },
+  "limits": {
+    "records": 200,
+    "bodyBytes": 24000000,
+    "workspaceBytes": 16000000,
+    "recordBytes": 200000,
+    "historyEvents": 20,
+    "policyEvents": 2000
+  },
+  "nonFunctional": {
+    "persistence": "Hosted D1 / local SQLite",
+    "migration": "書込み停止中のsnapshot export/import。無停止移行と書込み開始後の逆移行は対象外",
+    "performance": "応答時間を記録する。性能SLOの適合は本PoCでは未認定",
+    "limits": "件数、本文byte数、監査件数、保存byte数は同時に満たす。取下げも200件に含む。上限を超える更新/importは413で拒否し既存データを保持する。"
+  },
+  "contractVersion": "2026-11-07.1",
+  "fields": {
+    "title": 120,
+    "reason": 2000
+  },
+  "wire": {
+    "characterCount": "Unicode code points; reject unpaired surrogates",
+    "timestamp": "YYYY-MM-DDTHH:mm:ss.SSSZ (UTC, real Gregorian calendar date)",
+    "revision": "non-negative safe integer <= 9007199254740991; JSON booleans rejected",
+    "trimCodePoints": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      32,
+      160,
+      5760,
+      8192,
+      8193,
+      8194,
+      8195,
+      8196,
+      8197,
+      8198,
+      8199,
+      8200,
+      8201,
+      8202,
+      8232,
+      8233,
+      8239,
+      8287,
+      12288,
+      65279
+    ]
+  },
+  "administration": {
+    "tenant": "atelier",
+    "role": "approver",
+    "exportScope": "owner-workspace-all-demo-tenants"
+  },
+  "progress": {
+    "independentRevision": true,
+    "units": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08"
+    ],
+    "answerValues": [
+      0,
+      1
+    ]
+  }
+}

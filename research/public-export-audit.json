@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-07",
+  "scanned_files": 74,
+  "original_workspace_identifier_matches": 0,
+  "credential_pattern_matches": 0,
+  "git_history": "fresh; no original history or private snapshots copied",
+  "hosting_project_id": "omitted",
+  "scope": "known original IDs and credential patterns; not a guarantee of exhaustive secret detection"
+}

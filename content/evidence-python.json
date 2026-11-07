@@ -1,0 +1,93 @@
+{
+  "base": "http://127.0.0.1:4178",
+  "executedAt": "2026-11-06T14:53:13Z",
+  "kind": "local HTTP acceptance; not blind holdout",
+  "passed": 21,
+  "failed": 0,
+  "results": [
+    {
+      "name": "R10 未知の実験人物を拒否",
+      "status": "passed"
+    },
+    {
+      "name": "R01 空白タイトルを拒否",
+      "status": "passed"
+    },
+    {
+      "name": "R01 未定義部品を拒否",
+      "status": "passed"
+    },
+    {
+      "name": "R01 正常起票と初期状態",
+      "status": "passed"
+    },
+    {
+      "name": "R03 設計者による承認を拒否",
+      "status": "passed"
+    },
+    {
+      "name": "R02 他人による提出を拒否",
+      "status": "passed"
+    },
+    {
+      "name": "R02 起票者が提出",
+      "status": "passed"
+    },
+    {
+      "name": "R04 v2で自己承認を拒否",
+      "status": "passed"
+    },
+    {
+      "name": "R05 拒否時にデータと履歴を維持",
+      "status": "passed"
+    },
+    {
+      "name": "R06 他テナントからIDを指定しても不可",
+      "status": "passed"
+    },
+    {
+      "name": "R06 他テナント一覧に混入しない",
+      "status": "passed"
+    },
+    {
+      "name": "R03 別承認者が承認",
+      "status": "passed"
+    },
+    {
+      "name": "R02 承認済みの再提出を拒否",
+      "status": "passed"
+    },
+    {
+      "name": "R07 3操作の監査と仕様版",
+      "status": "passed"
+    },
+    {
+      "name": "R08 古いrevisionの更新を拒否",
+      "status": "passed"
+    },
+    {
+      "name": "R04 v1へ切替",
+      "status": "passed"
+    },
+    {
+      "name": "R04 v1で自己承認が可能",
+      "status": "passed"
+    },
+    {
+      "name": "R04 仕様変更で過去履歴を改変しない",
+      "status": "passed"
+    },
+    {
+      "name": "R05 理由なし却下を拒否",
+      "status": "passed"
+    },
+    {
+      "name": "R05 理由付き却下",
+      "status": "passed"
+    },
+    {
+      "name": "R09 非空移行先へのimportを拒否",
+      "status": "passed"
+    }
+  ]
+}

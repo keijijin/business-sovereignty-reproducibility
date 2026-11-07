@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "executedAt": "2026-11-06T14:54:26Z",
+  "description": "JavaScriptからPythonへ移行。不正パック拒否、ID・状態・履歴の一致、別承認者による処理続行、テナント分離をHTTPで確認。",
+  "source": "http://127.0.0.1:4177",
+  "target": "http://127.0.0.1:4179",
+  "records": 4,
+  "results": [
+    {
+      "name": "不正な履歴を400で拒否し空の移行先を保持",
+      "status": "passed"
+    },
+    {
+      "name": "JavaScriptのexportをPythonへimport",
+      "status": "passed"
+    },
+    {
+      "name": "ID・属性・状態・監査履歴の完全一致",
+      "status": "passed"
+    },
+    {
+      "name": "同じIDの申請を別承認者で継続し承認",
+      "status": "passed"
+    },
+    {
+      "name": "移行後もテナント境界を維持",
+      "status": "passed"
+    }
+  ]
+}

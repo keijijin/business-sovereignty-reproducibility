@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {handleApi,configureSpec} from '../worker/domain.mjs';
+configureSpec(JSON.parse(readFileSync('materials/business.json','utf8')));
+const data=new Map();const repo={loadProgress:async()=>null,load:async o=>data.get(o)||null,save:async(o,s,r)=>{if((data.get(o)?.revision||0)!==r)return false;data.set(o,structuredClone(s));return true}};
+const request=(p,b,origin)=>new Request('https://example.test'+p,{method:b?'POST':'GET',headers:{'content-type':'application/json','x-demo-actor':'kai',...(origin?{origin}:{})},...(b?{body:JSON.stringify(b)}:{})});
+assert.equal((await handleApi(request('/api/state'),repo,null)).status,401);
+const b={title:'分離確認',part:'BRK-001 ブラケット 改訂A',reason:'本人workspaceの境界を確認する',revision:0};
+assert.equal((await handleApi(request('/api/requests',b),repo,'owner-A')).status,201);
+const other=await(await handleApi(request('/api/state'),repo,'owner-B')).json();assert.equal(other.requests.length,0);
+assert.equal((await handleApi(request('/api/requests',b,'https://malicious.test'),repo,'owner-B')).status,403);
+const statuses=await Promise.all([handleApi(request('/api/requests',{...b,revision:1}),repo,'owner-A'),handleApi(request('/api/requests',{...b,revision:1}),repo,'owner-A')]).then(rs=>rs.map(r=>r.status).sort());assert.deepEqual(statuses,[201,409]);
+console.log('4 boundary checks passed: unauthenticated, workspace isolation, foreign origin, concurrent revision');

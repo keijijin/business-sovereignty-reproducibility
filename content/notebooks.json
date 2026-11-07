@@ -1,0 +1,66 @@
+[
+  {
+    "unit": "01",
+    "url": "https://notebook.google.com/notebook/5c1b7426-9ece-426f-84ae-f14538f8dfe7",
+    "status": "completed",
+    "observation": "第01単元：業務主権という転換 / 6:46 / NotebookLMの再生ボタンを確認（制作時の記録）",
+    "localFile": "media/unit-01.mp4",
+    "durationSeconds": 406.883265
+  },
+  {
+    "unit": "02",
+    "url": "https://notebook.google.com/notebook/2fa78ce3-2835-495f-a06f-e5644ffc4ed2",
+    "observation": "第02単元：業務の意志を定義する / 5:57 / NotebookLMの再生ボタンを確認（制作時の記録）",
+    "status": "completed",
+    "localFile": "media/unit-02.mp4",
+    "durationSeconds": 357.169342
+  },
+  {
+    "unit": "03",
+    "url": "https://notebook.google.com/notebook/4189cde6-7a94-422a-af9b-891d6dcb06f7",
+    "observation": "第03単元：知識を仕様へ還元する / 7:13 / NotebookLMの再生ボタンを確認（制作時の記録）",
+    "status": "completed",
+    "localFile": "media/unit-03.mp4",
+    "durationSeconds": 433.145034
+  },
+  {
+    "unit": "04",
+    "url": "https://notebook.google.com/notebook/22070ce3-d6b7-4078-95ab-4cf44ed7c4dd",
+    "observation": "第04単元：契約と評価を資産にする / 5:47 / NotebookLMの再生ボタンを確認（制作時の記録）",
+    "status": "completed",
+    "localFile": "media/unit-04.mp4",
+    "durationSeconds": 347.649161
+  },
+  {
+    "unit": "05",
+    "url": "https://notebook.google.com/notebook/b7bbd4f7-9411-4c23-8a5f-27d147973a58",
+    "observation": "第05単元：AIが実装を具体化する / 7:17 / NotebookLMの再生ボタンを確認（制作時の記録）",
+    "status": "completed",
+    "localFile": "media/unit-05.mp4",
+    "durationSeconds": 437.812245
+  },
+  {
+    "unit": "06",
+    "url": "https://notebook.google.com/notebook/6d3cd80a-a0fd-4afa-9ace-7486f492c219",
+    "observation": "第06単元：独立評価で受け入れる / 7:08 / NotebookLMの再生ボタンを確認（制作時の記録）",
+    "status": "completed",
+    "localFile": "media/unit-06.mp4",
+    "durationSeconds": 428.942222
+  },
+  {
+    "unit": "07",
+    "url": "https://notebook.google.com/notebook/30b97c97-d9da-4578-a98c-22c7fb220986",
+    "observation": "第07単元：データを持って実装を交換する / 8:20 / NotebookLMの再生ボタンを確認（制作時の記録）",
+    "status": "completed",
+    "localFile": "media/unit-07.mp4",
+    "durationSeconds": 500.831202
+  },
+  {
+    "unit": "08",
+    "url": "https://notebook.google.com/notebook/5a4dc775-3ecb-40a5-9778-7ac49551bf28",
+    "observation": "第08単元：PoCから業務主権へ / 6:39 / NotebookLMの再生ボタンを確認（制作時の記録）",
+    "status": "completed",
+    "localFile": "media/unit-08.mp4",
+    "durationSeconds": 399.31356
+  }
+]

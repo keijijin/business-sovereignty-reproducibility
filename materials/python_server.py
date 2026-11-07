@@ -8,6 +8,10 @@ class Fault(Exception):
  def __init__(self,status,msg):self.status=status;super().__init__(msg)
 def need(ok,status,msg):
  if not ok:raise Fault(status,msg)
+def number(s):
+ f=float(s);return int(f) if f.is_integer() and abs(f)<=9007199254740991 else f
+def reject_constant(name):raise ValueError('non-standard JSON constant '+name)
+def loads(raw):return json.loads(raw,parse_float=number,parse_constant=reject_constant)
 def integer(n):return type(n) in (int,float) and 0<=n<=9007199254740991 and n%1==0
 def policy(n):return integer(n) and n in (1,2)
 def size(v):return len(json.dumps(v,ensure_ascii=False,separators=(',',':')).encode())
@@ -70,7 +74,7 @@ class Handler(BaseHTTPRequestHandler):
  def run_action(self,write):
   conn=sqlite3.connect(DB)
   try:
-   aid=self.headers.get('X-Demo-Actor','aya');need(aid in ACTORS,403,'実験人物が不正です');a=ACTORS[aid]
+   aid=self.headers.get('X-Demo-Actor') or 'aya';need(aid in ACTORS,403,'実験人物が不正です');a=ACTORS[aid]
    if write:conn.execute('BEGIN IMMEDIATE')
    row=conn.execute('SELECT body FROM workspace WHERE id=1').fetchone();s=json.loads(row[0]) if row else initial();s.setdefault('policyHistory',[]);path=self.path.split('?')[0]
    def learning():
@@ -85,8 +89,10 @@ class Handler(BaseHTTPRequestHandler):
      r=next((r for r in s['requests'] if r['id']==m[1] and r['tenant']==a['tenant']),None);need(r,404,'申請がありません');self.respond(200,{'request':r,'revision':s['revision']});return
     raise Fault(404,'APIがありません')
    origin=self.headers.get('Origin');need(not origin or origin=='http://'+self.headers.get('Host'),403,'別サイトからの更新です');need('application/json' in self.headers.get('Content-Type',''),415,'JSONで送信してください')
-   length=int(self.headers.get('Content-Length',0));need(0<=length<=LIMITS['bodyBytes'],413,'入力が大きすぎます')
-   try:b=json.loads(self.rfile.read(length))
+   try:length=int(self.headers.get('Content-Length',0))
+   except ValueError:raise Fault(400,'Content-Lengthが不正です')
+   need(0<=length<=LIMITS['bodyBytes'],413,'入力が大きすぎます')
+   try:b=loads(self.rfile.read(length))
    except Exception:raise Fault(400,'JSONが不正です')
    need(isinstance(b,dict),400,'オブジェクトが必要です');now=datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00','Z');out={}
    if path=='/api/progress':

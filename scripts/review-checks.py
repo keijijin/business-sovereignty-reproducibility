@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Reproducible loopback checks. Owns and stops only the servers it starts."""
-import copy,hashlib,json,os,socket,subprocess,sys,time,urllib.request,urllib.error
+import copy,hashlib,http.client,json,os,socket,subprocess,sys,time,urllib.parse,urllib.request,urllib.error
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];os.chdir(ROOT)
 NODE=os.environ.get('NODE_BIN','node');folder=ROOT/'.local'/('review-'+str(time.time_ns()));folder.mkdir(parents=True)
@@ -23,6 +23,14 @@ def call(base,path,body=None,actor='kai'):
  try:
   with urllib.request.urlopen(req,timeout=60) as r:return r.status,json.load(r)
  except urllib.error.HTTPError as r:return r.code,json.load(r)
+def send_raw(base,path,body,actor='kai',headers=None):
+ u=urllib.parse.urlsplit(base);c=http.client.HTTPConnection(u.hostname,u.port,timeout=60)
+ try:
+  c.putrequest('POST' if body is not None else 'GET',path);c.putheader('Content-Type','application/json');c.putheader('X-Demo-Actor',actor)
+  data=(body or '').encode();sent={'Content-Length':str(len(data)),**(headers or {})}
+  for k,v in sent.items():c.putheader(k,v)
+  c.endheaders(data if body is not None else None);r=c.getresponse();return r.status,r.read().decode()
+ finally:c.close()
 def state(base):return call(base,'/api/state')[1]
 def post(base,path,**body):return call(base,path,{'revision':state(base)['revision'],**body})
 def eq(a,b):assert a==b,f'{str(a)[:200]} != {str(b)[:200]}'
@@ -78,6 +86,29 @@ try:
  with urllib.request.urlopen(req) as response:status=response.status
  check('ローカル動画取込はGit動画を保持し専用領域へ保存',lambda:(eq(status,200),eq(hashlib.sha256(video.read_bytes()).hexdigest(),before_hash),eq((folder/'upload-check-media/unit-01.mp4').read_bytes(),raw)))
  evidence['localUploads']=section(results[mark:],'HTTP PUT media; separate ignored local directory')
+ # Cross-implementation counterexamples found after the 44-check suite; both realizations must agree.
+ mark=len(results);part='BRK-001 ブラケット 改訂A';at='2026-11-06T00:00:00.000Z'
+ def pack(history_extra=None,**request):
+  r={'id':'cr-00000000-0000-4000-8000-000000000001','title':'差分確認','part':part,'reason':'理由','tenant':'atelier','createdBy':'aya','createdAt':at,'status':'draft','history':[{'action':'create','actor':'aya','at':at,'from':None,'to':'draft','policyVersion':2,**(history_extra or {})}]};r.update(request)
+  return {'format':'business-sovereignty/1','policyVersion':2,'requests':[r]}
+ for kind in ['js','py']:
+  base=start(kind,'differential-'+kind)
+  for name in ['__proto__','constructor','toString']:
+   check(kind+' 組込みプロパティ名の人物 '+name+' を拒否',lambda name=name:(eq(call(base,'/api/state',actor=name)[0],403),eq(call(base,'/api/requests',{'title':'t','part':part,'reason':'r','revision':0},name)[0],403)))
+  check(kind+' 空の人物ヘッダーは既定人物として扱う',lambda:eq(send_raw(base,'/api/state',None,'')[0],200))
+  def invalid(p):
+   before=state(base);eq(call(base,'/api/import',{'revision':before['revision'],'pack':p},'ren')[0],400);eq(state(base),before)
+  check(kind+' 組込みプロパティ名の起票者を400で拒否',lambda:invalid(pack(createdBy='toString')))
+  check(kind+' policyHistory=nullのパックを拒否',lambda:invalid({**pack(),'policyHistory':None}))
+  check(kind+' 起票属性after=falseを拒否',lambda:invalid(pack({'after':False})))
+  check(kind+' NaNを含む非標準JSONを400で拒否',lambda:eq(send_raw(base,'/api/requests','{"revision":NaN}')[0],400))
+  check(kind+' 不正なContent-Lengthを400で拒否',lambda:eq(send_raw(base,'/api/requests','{}',headers={'Content-Length':'abc'})[0],400))
+  def numeric():
+   body=json.dumps({'revision':state(base)['revision'],'pack':pack()},ensure_ascii=False).replace('"policyVersion": 2','"policyVersion": 2.0')
+   assert body.count('2.0')==2;eq(send_raw(base,'/api/import',body,'ren')[0],200);status,text=send_raw(base,'/api/export',None,'ren');out=json.loads(text)
+   eq(status,200);eq([type(out['policyVersion']),type(out['requests'][0]['history'][0]['policyVersion'])],[int,int]);eq('2.0' in text,False)
+  check(kind+' 2.0表記を受理し整数2として書き出す',numeric)
+ evidence['differential']=section(results[mark:],'post-review cross-implementation counterexamples; same expected outcome in both realizations')
  evidence['executedAt']=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime());evidence['sourceCommitRole']='tested source commit; exact test inputs are identified by sourceHashes';evidence['sourceCommit']=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip();evidence['sourceHashes']={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in ['materials/business.json','materials/python_server.py','materials/acceptance.py','worker/domain.mjs','scripts/dev.mjs','scripts/local-sqlite.mjs','scripts/review-checks.py','web/app.js']}
  for k in ['boundaries','media','storage','snapshots']:
   script={'boundaries':'scripts/check-boundaries.mjs','media':'scripts/check-media.mjs','storage':'scripts/check-storage.mjs','snapshots':'scripts/verify-snapshots.py'}[k]

@@ -8,7 +8,7 @@ export function configureSpec(spec){
  if(!Array.isArray(spec.parts)||!spec.parts.length||!spec.parts.every(x=>typeof x==='string')||!spec.actors||!spec.administration?.tenant||!Array.isArray(spec.wire?.trimCodePoints)||!Array.isArray(spec.progress?.units)||!Array.isArray(spec.progress?.answerValues))throw Error('Incomplete business specification');
  for(const a of Object.values(spec.actors))if(typeof a.tenant!=='string'||!Array.isArray(a.roles)||!a.roles.length||!a.roles.every(r=>['designer','approver'].includes(r)))throw Error('Invalid spec actor');
  if(!Object.values(spec.actors).some(a=>a.tenant===spec.administration.tenant&&a.roles.includes(spec.administration.role))||![1,2].includes(spec.defaults?.policyVersion))throw Error('Invalid administration/default specification');
- config=structuredClone(spec);({actors,parts,limits,fields}=config);trimChars=new Set(config.wire.trimCodePoints.map(c=>String.fromCodePoint(c)));
+ config=structuredClone(spec);({parts,limits,fields}=config);actors=Object.assign(Object.create(null),config.actors);trimChars=new Set(config.wire.trimCodePoints.map(c=>String.fromCodePoint(c)));
 }
 const trim=s=>{const a=Array.from(s);while(a.length&&trimChars.has(a[0]))a.shift();while(a.length&&trimChars.has(a.at(-1)))a.pop();return a.join('')};
 const text=(s,max)=>typeof s==='string'&&!/[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/u.test(s)&&Array.from(s).length<=max&&trim(s).length>0;
@@ -32,7 +32,7 @@ function validatePack(pack){
   ids.add(r.id);let previous=null,priorAt,tracked;
   for(let i=0;i<r.history.length;i++){
    const h=r.history[i],person=actors[h?.actor];if(!h||!person||person.tenant!==r.tenant||!iso(h.at)||!policy(h.policyVersion)||h.from!==previous||(priorAt&&priorAt>h.at))fail(400,'監査履歴の連続性が不正です');
-   if(i===0){if(h.action!=='create'||h.to!=='draft'||h.actor!==r.createdBy||!person.roles.includes('designer'))fail(400,'起票履歴が不正です');if(h.after){if(!attributes(h.after))fail(400,'起票属性が不正です');tracked=attrs(h.after)}}
+   if(i===0){if(h.action!=='create'||h.to!=='draft'||h.actor!==r.createdBy||!person.roles.includes('designer'))fail(400,'起票履歴が不正です');if(h.after!=null){if(!attributes(h.after))fail(400,'起票属性が不正です');tracked=attrs(h.after)}}
    else if(['submit','edit','withdraw'].includes(h.action)){
     const to={submit:'submitted',edit:'draft',withdraw:'withdrawn'}[h.action];if(h.from!=='draft'||h.to!==to||h.actor!==r.createdBy||!person.roles.includes('designer'))fail(400,'設計者の操作履歴が不正です');
     if(h.action==='edit'){if(!attributes(h.before)||!attributes(h.after)||(tracked&&JSON.stringify(tracked)!==JSON.stringify(attrs(h.before))))fail(400,'訂正の前後が不正です');tracked=attrs(h.after)}
@@ -42,7 +42,7 @@ function validatePack(pack){
   }
   if(previous!==r.status||r.createdAt!==r.history[0].at||(tracked&&JSON.stringify(tracked)!==JSON.stringify(attrs(r))))fail(400,'属性・状態と履歴が一致しません');
  }
- return {requests:structuredClone(pack.requests),policyHistory:policyHistory(pack.policyHistory||[],pack.policyVersion)};
+ return {requests:structuredClone(pack.requests),policyHistory:policyHistory(pack.policyHistory===undefined?[]:pack.policyHistory,pack.policyVersion)};
 }
 export async function handleApi(request,repo,owner){
  const json=(v,status=200)=>Response.json(v,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});

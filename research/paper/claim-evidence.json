@@ -1,0 +1,76 @@
+{
+  "public_artifact": {
+    "url": "https://github.com/keijijin/business-sovereignty-reproducibility",
+    "fixed_tag": "artifact-v1.0.0",
+    "history": "fresh sanitized export; development commits are historical provenance"
+  },
+  "study_kind": "constructed technical case and retrospective artifact analysis; not independent replication or controlled AI comparison",
+  "acceptance": {
+    "source": "content/evidence.json#runs",
+    "passed_per_realization": 44,
+    "failed_per_realization": 0,
+    "independent_samples": false
+  },
+  "small_migration": {
+    "source": "content/evidence.json#migration; scripts/review-checks.py",
+    "directions": 2,
+    "fixtures_per_direction": 1,
+    "assertions_total": 6,
+    "directly_compared": [
+      "requests",
+      "policyHistory"
+    ],
+    "not_independently_asserted": "all top-level export fields"
+  },
+  "capacity": {
+    "source": "content/evidence.json#regressions; scripts/review-checks.py",
+    "records_per_source": 200,
+    "title_code_points": 120,
+    "reason_code_points": 2000,
+    "export_threshold_bytes": 1048576,
+    "exact_export_bytes_recorded": false,
+    "assertions_total": 6,
+    "maximum_history_workload": false
+  },
+  "configuration": {
+    "source": "content/evidence.json#specConfiguration",
+    "assertions": 4,
+    "scope": "selected field/part settings and unsupported state rejection, not arbitrary prose-to-code"
+  },
+  "storage": {
+    "source": "content/evidence.json#storage",
+    "checks": 5,
+    "environment": "actual local SQLite, not comprehensive hosted D1"
+  },
+  "historical_counterexamples": {
+    "source": "user-supplied review and docs/review-remediation.md",
+    "reproduced_for_manuscript": false,
+    "reported_old_checks_per_realization": 21,
+    "reported_failing_state_bytes": 1169346,
+    "reported_failing_records": 90
+  },
+  "hosted": {
+    "source": "docs/hosted-review-verification.md",
+    "source_commit": "8ef0f63b71cbbad26feb7f2d797f825d3203e50d",
+    "scope": "existing approved request retained; policy v2 to v1 to v2 with actor/time audit; evidence presentation",
+    "full_suite_through_hosted_identity": false
+  },
+  "not_established": [
+    "complete equivalence",
+    "autonomous regeneration",
+    "AI-provider exchange",
+    "cost or performance superiority",
+    "organizational sovereignty",
+    "historical inevitability"
+  ],
+  "source_hashes": {
+    "materials/business.json": "c50adaa36b84a3df2ac5c29184d986a6963ead0c51cb8f71ac7b17e06b3cfc66",
+    "materials/python_server.py": "a1372f128eae3e23d90f11378ba65ca95283e4d33884dcbb342029d70c4272f5",
+    "materials/acceptance.py": "3b2221405fd641ab88864962c4889e4ca601e6c5aba6c4344459e6e594019846",
+    "worker/domain.mjs": "7220f07dcc42b28413b266781adae3fc5ea21526804f239d23116fb303eccae3",
+    "scripts/dev.mjs": "cf3e4bb9a267bd407b3fda09bcaddc6346fa44de7b737926111f6f817a8f08bd",
+    "scripts/local-sqlite.mjs": "c232bc3fd5a76ddb2e62f6c74c1c51d30f1292741dce8ca33648f9b4da6ebf1d",
+    "scripts/review-checks.py": "8fb6ae53129ee553ba7471b667b0cdae1314826ab76003b3ca098ebe477dfc63",
+    "web/app.js": "c60dd11ffd1f60cfca7f1a4db75212a2e379c6be7abfebe4290cafee08fe21ed"
+  }
+}

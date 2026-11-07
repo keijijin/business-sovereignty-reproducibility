@@ -1,0 +1,179 @@
+{
+  "validated_on": "2026-11-07",
+  "tested_code_baseline": "130054398f6c72c071fdeea266fcac714250fd1f",
+  "artifact_snapshot": "233e9e46592ba48b5686dae99c7c829edb31e09c",
+  "validation_scope": "source identity, result counts, reference numbering, paired version/number sanity, PDF geometry and embedded CJK font; not semantic equivalence proof",
+  "new_api_test_run_for_manuscript": false,
+  "visual_review": "Final publication-update pages rendered and inspected; embedded Japanese font retained.",
+  "documents": {
+    "en": {
+      "pages": 11,
+      "reference_count": 17,
+      "author_present": true,
+      "glyph_bounds": "within page; separated from footer",
+      "fonts": [
+        "/BAAAAA+TimesNewRomanPSMT",
+        "/CAAAAA+TimesNewRomanPSMT",
+        "/DAAAAA+TimesNewRomanPSMT",
+        "/EAAAAA+TimesNewRomanPS-ItalicMT",
+        "/FAAAAA+TimesNewRomanPSMT",
+        "/GAAAAA+TimesNewRomanPS-BoldMT",
+        "/HAAAAA+TimesNewRomanPS-BoldMT",
+        "/IAAAAA+TimesNewRomanPS-BoldMT",
+        "/JAAAAA+CourierNewPSMT"
+      ],
+      "page_bounds": [
+        {
+          "page": 1,
+          "body_right_pt": 546.2,
+          "body_bottom_pt": 718.38
+        },
+        {
+          "page": 2,
+          "body_right_pt": 545.7,
+          "body_bottom_pt": 677.93
+        },
+        {
+          "page": 3,
+          "body_right_pt": 546.2,
+          "body_bottom_pt": 726.03
+        },
+        {
+          "page": 4,
+          "body_right_pt": 540.91,
+          "body_bottom_pt": 728.53
+        },
+        {
+          "page": 5,
+          "body_right_pt": 545.9,
+          "body_bottom_pt": 675.43
+        },
+        {
+          "page": 6,
+          "body_right_pt": 546.25,
+          "body_bottom_pt": 716.88
+        },
+        {
+          "page": 7,
+          "body_right_pt": 545.05,
+          "body_bottom_pt": 722.88
+        },
+        {
+          "page": 8,
+          "body_right_pt": 545.0,
+          "body_bottom_pt": 716.23
+        },
+        {
+          "page": 9,
+          "body_right_pt": 545.0,
+          "body_bottom_pt": 723.3
+        },
+        {
+          "page": 10,
+          "body_right_pt": 544.4,
+          "body_bottom_pt": 700.38
+        },
+        {
+          "page": 11,
+          "body_right_pt": 532.24,
+          "body_bottom_pt": 157.28
+        }
+      ]
+    },
+    "ja": {
+      "pages": 11,
+      "reference_count": 17,
+      "author_present": true,
+      "glyph_bounds": "within page; separated from footer",
+      "fonts": [
+        "/BAAAAA+HiraMinProN-W3",
+        "/CAAAAA+TimesNewRomanPSMT",
+        "/DAAAAA+HiraMinProN-W3",
+        "/EAAAAA+TimesNewRomanPS-ItalicMT",
+        "/FAAAAA+HiraMinProN-W3",
+        "/GAAAAA+HiraMinProN-W3",
+        "/HAAAAA+HiraMinProN-W3",
+        "/IAAAAA+TimesNewRomanPSMT",
+        "/JAAAAA+HiraMinProN-W6",
+        "/KAAAAA+HiraMinProN-W6",
+        "/LAAAAA+TimesNewRomanPS-BoldMT",
+        "/MAAAAA+HiraMinProN-W6",
+        "/NAAAAA+HiraMinProN-W3",
+        "/OAAAAA+TimesNewRomanPS-BoldMT",
+        "/PAAAAA+HiraMinProN-W3",
+        "/QAAAAA+CourierNewPSMT"
+      ],
+      "page_bounds": [
+        {
+          "page": 1,
+          "body_right_pt": 552.5,
+          "body_bottom_pt": 715.97
+        },
+        {
+          "page": 2,
+          "body_right_pt": 552.5,
+          "body_bottom_pt": 666.12
+        },
+        {
+          "page": 3,
+          "body_right_pt": 548.7,
+          "body_bottom_pt": 705.12
+        },
+        {
+          "page": 4,
+          "body_right_pt": 542.45,
+          "body_bottom_pt": 717.5
+        },
+        {
+          "page": 5,
+          "body_right_pt": 543.0,
+          "body_bottom_pt": 716.12
+        },
+        {
+          "page": 6,
+          "body_right_pt": 551.4,
+          "body_bottom_pt": 700.18
+        },
+        {
+          "page": 7,
+          "body_right_pt": 552.5,
+          "body_bottom_pt": 728.12
+        },
+        {
+          "page": 8,
+          "body_right_pt": 552.5,
+          "body_bottom_pt": 700.18
+        },
+        {
+          "page": 9,
+          "body_right_pt": 551.45,
+          "body_bottom_pt": 683.12
+        },
+        {
+          "page": 10,
+          "body_right_pt": 552.5,
+          "body_bottom_pt": 493.12
+        },
+        {
+          "page": 11,
+          "body_right_pt": 544.4,
+          "body_bottom_pt": 595.48
+        }
+      ]
+    }
+  },
+  "sha256": {
+    "paper-en.md": "09361b24c78d6654963e3ff3d4073a2106fbfde2c1103ef6962a254a60c25f9d",
+    "paper-ja.md": "ca0bb9c73df044bcf2b23723c13f5a247b3b86e0a18e709661132acb47162e39",
+    "paper-en.docx": "0d2da1647da668f2cad8b7883623ec3dc7611f6543a5afadcb89660d9b7549c0",
+    "paper-ja.docx": "a09e191a58b0c99ba86e0ff0d2f5f79af8f1b965702a31fe8ebebff0c591c07d",
+    "paper-en.pdf": "a3509b0d7471b7d9be24f3313fa6024d902a4fb0c20c91e79b70bb361c95678a",
+    "paper-ja.pdf": "80ec99a720a296c4a2740ecc022c806bd5d2adaf21a441723917224b8e9128d1",
+    "references.json": "83496a903c0d118492681fff95e61c9e2e8518025174a7a23248217d89f4b064",
+    "references.bib": "3e7c986a3325eb1d0f4558a2c41d89a6ea9bae4bfa22a317ad6327de4717cca1",
+    "build_documents.py": "fa734a2a8e17bea258957aa9dbc839090c5e5a3a00102f6671cee7259493f456",
+    "validate_paper.py": "a441746f3d09264184f925cb294ee35ad593254fa742de443d816c1cc3379e5e",
+    "claim-evidence.json": "5adb70c1aa96900b59294b4911c5fa3b37b7f209ef3aef65b2bab9d8c0444ad4",
+    "README.md": "5af834e9c9ba88a020bacea8a2e1410245a2a0d362fb95dc53bd94b4111f4fa1"
+  }
+}
